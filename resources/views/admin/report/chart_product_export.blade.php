@@ -1,0 +1,34 @@
+<table id="example2" class="table table-bordered table-hover dataTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>产品</th>
+            <th>销量</th>
+            <th>总销售额</th>
+            <th>浏览量</th>
+            <th>收藏量</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($collectReport['datalist'] as $key => $data)
+            <tr>
+                <td>{{$data['id']}}</td>
+                <td>{{$data['name']}}</td>
+                <td>{{$data['sales']}}</td>
+                <td>{{$data['total_price']}}</td>
+                <td>{{$data['browse']}}</td>
+                <td>{{$data['collectNum']}}</td>
+            </tr>
+        @endforeach
+    </tbody>
+    <tfoot>
+        <tr>
+            <th><th>
+            <th>小计</th>
+            <th>{{$collectReport['total']['all_total_sales']}}</th>
+            <th>{{$collectReport['total']['all_total_price']}}</th>
+            <th>{{$collectReport['total']['all_total_browse']}}</th>
+            <th>{{$collectReport['total']['all_total_collectNum']}}</th>
+        </tr>
+    </tfoot>
+</table>

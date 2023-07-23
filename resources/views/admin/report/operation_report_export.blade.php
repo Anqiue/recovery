@@ -1,0 +1,31 @@
+<table id="example2" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>运营中心名称</th>
+        <th>总订单量</th>
+        <th>总销售额</th>
+        <th>工长总数</th>
+        <th>师傅总数</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach ($collectReport['datalist'] as $data)
+    <tr>
+        <td>{{$data['name']}}</td>
+        <td>{{$data['total_num']}}</td>
+        <td>{{$data['total_price']}}</td>
+        <td>{{$data['total_foreman']}}</td>
+        <td>{{$data['total_master']}}</td>
+    </tr>
+    @endforeach
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>小计</th>
+        <th>{{$collectReport['total']['all_total_num']}}</th>
+        <th>{{$collectReport['total']['all_total_price']}}</th>
+        <th>{{$collectReport['total']['all_total_foreman']}}</th>
+        <th>{{$collectReport['total']['all_total_master']}}</th>
+    </tr>
+    </tfoot>
+</table>
